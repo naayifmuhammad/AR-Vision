@@ -1,6 +1,6 @@
 {% extends "layouts/base.html" %}
 
-{% block title %} Login {% endblock %} 
+{% block title %} Advertiser Registration {% endblock %} 
 
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}{% endblock stylesheets %}
@@ -12,7 +12,7 @@
       <div class="card">
         <div class="card-header card-header-primary">
           <h4 class="card-title">
-            Create Account
+            Advertiser Registration
           </h4>
         </div>
         <div class="card-body">
@@ -21,83 +21,92 @@
               {% if msg %}
                 <span class="text-danger">{{ msg | safe }}</span>
               {% else %}
-                Add your credentials
+                Please provide your business details
               {% endif %}  
           </h6>
           
           <br />
 
-          {% if success %}
+          <form role="form" method="post" action="">
+              
+            {% csrf_token %} 
 
-            <p class="">
-              Please <a href="{% url 'login' %}" class="text-black text-small">authenticate</a> using the new account.
-            </p>  
-
-          {% else %}
-            <form role="form" method="post" action="">
-                
-              {% csrf_token %} 
-
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Username</label>
-                    {{ form.username }}
-                  </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label class="bmd-label-floating">Business Name</label>
+                  {{ form.username }}
                 </div>
               </div>
-              <span class="text-danger">{{ form.username.errors }}</span>
+            </div>
 
-              <br />
+            <br />
 
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Email</label>
-                    {{ form.email }}
-                  </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label class="bmd-label-floating">Business Email</label>
+                  {{ form.email }}
                 </div>
               </div>
-              <span class="text-danger">{{ form.email.errors }}</span>
+            </div>
 
-              <br />
+            <br />
 
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Password</label>
-                    {{ form.password1 }}
-                  </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label class="bmd-label-floating">Business Phone</label>
+                  {{ form.business_phone }}
                 </div>
               </div>
-              <span class="text-danger">{{ form.password1.errors }}</span>
+            </div>
 
-              <br />
+            <br />
 
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Password Check</label>
-                    {{ form.password2 }}
-                  </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label class="bmd-label-floating">Business Address</label>
+                  {{ form.business_address }}
                 </div>
               </div>
-              <span class="text-danger">{{ form.password2.errors }}</span>
+            </div>
 
-              <br />
+            <br />
+            
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label class="bmd-label-floating">Password</label>
+                  {{ form.password1 }}
+                </div>
+              </div>
+            </div>
 
-              <button type="submit" name="register" class="btn btn-primary pull-left">Register</button>
+            <br />
+            
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label class="bmd-label-floating">Confirm Password</label>
+                  {{ form.password2 }}
+                </div>
+              </div>
+            </div>
 
-              &nbsp; &nbsp; 
-              <span class="pull-right">
-                Have an account? <a href="{% url 'login' %}" class="text-primary">Login</a>
-              </span>
+            <br />
 
-              <div class="clearfix"></div>
+            <button type="submit" name="register" class="btn btn-primary pull-left">Register</button>
 
-            </form>
-          {% endif %}
+            &nbsp; &nbsp; 
+            <span class="pull-right">
+              Already registered? <a href="{% url 'login' %}" class="text-primary">Log in</a>
+            </span>
 
+            <div class="clearfix"></div>
+
+          </form>
         </div>
       </div>
     </div>
