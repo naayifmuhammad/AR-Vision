@@ -1,0 +1,33 @@
+# Ignore database file
+db.sqlite3
+
+# Ignore virtual environment
+venv/
+
+# Ignore Node.js related files
+node_modules/
+
+# Ignore Python bytecode files
+__pycache__/
+
+# Ignore runtime environment file
+runtime.txt
+
+# Ignore compiled Python files
+*.pyc
+
+# Ignore Docker related files
+Dockerfile
+docker-compose.yml
+
+# Ignore NGINX related files
+nginx/
+
+# Ignore gunicorn configuration file
+gunicorn-cfg.py
+
+# Ignore Procfile
+Procfile
+
+# Ignore dependencies installed via npm
+package-lock.json
