@@ -1,0 +1,99 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Profile {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header card-header-primary">
+        <h4 class="card-title">Upload marketing material</h4>
+
+      </div>
+      <div class="card-body">
+        <form method="post" action="{% url 'upload_material' %}" enctype="multipart/form-data">
+          {% csrf_token %}
+          
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="form-group">
+                      <label class="bmd-label-floating">Product name</label>
+                      <input type="text" class="form-control" required name="product_name">
+                  </div>
+              </div>
+              <div class="col-md-12">
+                  <div class="form-group">
+                      <label class="bmd-label-floating">Description</label>
+                      <input type="text" class="form-control" required name="description">
+                  </div>
+              </div>
+          </div>
+          
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label class="bmd-label-floating">Price (₹)</label>
+                      <input type="number" class="form-control" required name="price">
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label class="bmd-label-floating">Vendor</label>
+                      <input type="text" class="form-control" name="vendor">
+                  </div>
+              </div>
+          </div>
+          
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="form-group">
+                      <label class="bmd-label-floating">Tagline</label>
+                      <input type="text" class="form-control" name="tagline">
+                  </div>
+              </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="bmd-label-floating">Length(M)</label>
+                    <input type="number" step="0.01" class="form-control" required name="length">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="bmd-label-floating">Height(M)</label>
+                    <input type="number" step="0.01" class="form-control" required name="height">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="bmd-label-floating">Breadth(M)</label>
+                    <input type="number" step="0.01" class="form-control" required name="breadth">
+                </div>
+            </div>
+        </div>
+          
+          <div class="row">
+              <div class="col-md-5">
+                  <div class="form-group">
+                      <label class="bmd-label-floating">Upload Media</label>
+                      <input type="file" required class="form-control" name="media_file" style="opacity: 100; position: relative; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%; z-index: 1;">
+                  </div>
+              </div>
+          </div>
+          
+          <button type="submit" class="btn btn-primary pull-right">Upload Material</button>
+          <div class="clearfix"></div>
+      </form>
+      
+   
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

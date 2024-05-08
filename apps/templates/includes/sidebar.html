@@ -45,12 +45,21 @@
         </a>
       </li> -->
       <li class="nav-item {% if 'ui-notifications' in segment %} active {% endif %}">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="/media_upload.html">
           <!-- /ui-notifications.html -->
-          <i class="material-icons">notifications</i>
-          <p>Notifications</p>
+          <i class="material-icons">upload</i>
+          <p>Media Upload</p>
         </a>
       </li>
+      
+      <li class="nav-item {% if 'ui-notifications' in segment %} active {% endif %}">
+        <a class="nav-link" href="{% url 'fetch_uploaded' %}">
+          <!-- /ui-notifications.html -->
+          <i class="material-icons">cloud</i>
+          <p>Uploaded Media</p>
+        </a>
+      </li>
+
 
       <li class="nav-item ">
         <a class="nav-link" href="{% url 'logout' %}">

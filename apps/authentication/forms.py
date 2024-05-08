@@ -12,14 +12,14 @@ class LoginForm(forms.Form):
     username = forms.CharField(
         widget=forms.TextInput(
             attrs={
-                "placeholder": "Username",
+                "placeholder": "",
                 "class": "form-control"
             }
         ))
     password = forms.CharField(
         widget=forms.PasswordInput(
             attrs={
-                "placeholder": "Password",
+                "placeholder": "",
                 "class": "form-control"
             }
         ))
@@ -30,14 +30,14 @@ class SignUpForm(UserCreationForm):
         max_length=100,
         widget=forms.TextInput(
             attrs={
-                "placeholder": "Business Name",
+                "placeholder": "",
                 "class": "form-control"
             }
         ))
     email = forms.EmailField(
         widget=forms.EmailInput(
             attrs={
-                "placeholder": "Business Email",
+                "placeholder": "",
                 "class": "form-control"
             }
         ))
@@ -45,14 +45,14 @@ class SignUpForm(UserCreationForm):
     password1 = forms.CharField(
         widget=forms.PasswordInput(
             attrs={
-                "placeholder": "Password",
+                "placeholder": "",
                 "class": "form-control"
             }
         ))
     password2 = forms.CharField(
         widget=forms.PasswordInput(
             attrs={
-                "placeholder": "Password check",
+                "placeholder": "",
                 "class": "form-control"
             }
         ))
@@ -61,7 +61,7 @@ class SignUpForm(UserCreationForm):
         max_length=15,
         widget=forms.NumberInput(
             attrs={
-                "placeholder": "Business Phone",
+                "placeholder": "",
                 "class": "form-control"
             }
         ))
@@ -69,11 +69,12 @@ class SignUpForm(UserCreationForm):
         max_length=255,
         widget=forms.TextInput(
             attrs={
-                "placeholder": "Business Address",
+                "placeholder": "",
                 "class": "form-control"
             }
         ))
+ 
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'password1', 'password2', 'business_phone', 'business_address')
+        fields = ('username', 'business_phone', 'business_address', 'email', 'password1', 'password2' )
